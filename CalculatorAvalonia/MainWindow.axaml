@@ -1,0 +1,52 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="CalculatorAvalonia.MainWindow"
+        Title="計算機 (Avalonia)"
+        Width="300"
+        Height="400"
+        MinWidth="300"
+        MinHeight="400"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="Manual">
+    <Grid RowDefinitions="Auto,*" Margin="10">
+        <!-- 顯示區域 -->
+        <TextBox x:Name="DisplayTextBox"
+                 Grid.Row="0"
+                 FontSize="24"
+                 TextAlignment="Right"
+                 IsReadOnly="True"
+                 Text="0"
+                 Margin="0,0,0,10"
+                 Padding="10,5"/>
+
+        <!-- 按鈕區域 -->
+        <Grid Grid.Row="1" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*" RowSpacing="5" ColumnSpacing="5">
+            <!-- 第一行：清除和運算符 -->
+            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="清除" Click="OnClearClick" FontSize="16"/>
+            <Button Grid.Row="0" Grid.Column="2" Content="÷" Click="OnOperationClick" FontSize="16"/>
+            <Button Grid.Row="0" Grid.Column="3" Content="×" Click="OnOperationClick" FontSize="16"/>
+
+            <!-- 第二行：7, 8, 9, - -->
+            <Button Grid.Row="1" Grid.Column="0" Content="7" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="8" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="9" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="1" Grid.Column="3" Content="−" Click="OnOperationClick" FontSize="16"/>
+
+            <!-- 第三行：4, 5, 6, + -->
+            <Button Grid.Row="2" Grid.Column="0" Content="4" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="5" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="2" Grid.Column="2" Content="6" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="2" Grid.Column="3" Content="+" Click="OnOperationClick" FontSize="16"/>
+
+            <!-- 第四行：1, 2, 3, = -->
+            <Button Grid.Row="3" Grid.Column="0" Content="1" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="3" Grid.Column="1" Content="2" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="3" Grid.Column="2" Content="3" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="3" Grid.Column="3" Grid.RowSpan="2" Content="=" Click="OnEqualsClick" FontSize="16"/>
+
+            <!-- 第五行：0, . -->
+            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="0" Click="OnNumberClick" FontSize="16"/>
+            <Button Grid.Row="4" Grid.Column="2" Content="." Click="OnDecimalClick" FontSize="16"/>
+        </Grid>
+    </Grid>
+</Window>
