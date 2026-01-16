@@ -6,6 +6,9 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <!-- 跨平台支援：在非 Windows 平台上使用 Exe 而非 WinExe -->
+    <OutputType Condition="'$(OS)' != 'Windows_NT'">Exe</OutputType>
+    <ApplicationManifest Condition="'$(OS)' != 'Windows_NT'"></ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>

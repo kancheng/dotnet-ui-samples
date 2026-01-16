@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
 using System;
+using System.Runtime.InteropServices;
 
 namespace CalculatorAvalonia
 {
